@@ -1,15 +1,15 @@
-#' myncurve gives a normal distribution curve and shades the area under the curve
+#' myncurve
+#'
+#' gives a normal distribution curve and shades the area under the curve
 #' up to a. It also calculates the probability of point a.
+#'
+#' @name MyNCurve
+#'
 #'
 #' @param mu mu
 #' @param sigma sigma
 #' @param a point a
-#'
-#' @return normal distribution curve with shaded area
-#' @export
-#'
-#' @examples
-#' myncurve(5, 10, 6)
+
 
 globalVariables(c("curve", "dnorm", "polygon", "pnorm", "x"))
 myncurve = function(mu, sigma, a){

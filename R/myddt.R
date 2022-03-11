@@ -1,21 +1,18 @@
-#' MyDDT
+#' @title myddt
+#' @name myddt
 #'
-#' Plots LENGTH~WEIGHT for the user-specified SPECIES.
+#' @param df data file
+#' @param cond Species to filter
 #'
-#' @param df Data set
-#' @param SPECIES Species that will be left. The rest will be excluded
-#'
-#' @return A plot of LENGTH~WEIGHT for only the user defined SPECIES
+#' @return Graphs
 #' @export
 #'
-#' @examples myddt(df=ddt, SPECIES == "LMBASS")
-
-library(dplyr, lib.loc="C:/Users/ezeki/OneDrive/Documents/R/win-library/4.1/")
-library(ggplot2, lib.loc="C:/Users/ezeki/OneDrive/Documents/R/win-library/4.1/")
 
 globalVariables(c("%>%", "filter", "ggplot", "aes", "geom_point", "stat_smooth",
                   "ggtitle", "theme", "element_text", "write.csv"))
 
+library(dplyr, lib.loc="C:/Users/ezeki/OneDrive/Documents/R/win-library/4.1/")
+library(ggplot2, lib.loc="C:/Users/ezeki/OneDrive/Documents/R/win-library/4.1/")
 myddt <- function(df, cond){
   # %>% is an operator from dplyr.
   # You must use "{{}}" to tell filter to find cond

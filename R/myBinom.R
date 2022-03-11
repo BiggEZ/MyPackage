@@ -1,17 +1,16 @@
-#' myBinom
+#' @title myBinom
+#'
+#' @name MyBinom
 #'
 #' @param iter number of iterations
 #' @param n number if variables
 #' @param p probability
 #'
-#' @return a barplot
-#' @export
-#'
-#' @examples
-#' myBinom(iter=100, n=10, p=0.5)
+
+
 
 globalVariables(c("barplot", "rainbow"))
-myBinom=function(iter,n, p){
+myBinom<-function(iter,n, p){
   # make a matrix to hold the samples
   #initially filled with NA's
   sam.mat=matrix(NA,nrow=n,ncol=iter, byrow=TRUE)
