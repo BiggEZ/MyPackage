@@ -3,8 +3,8 @@
 #'
 #' @param n number of different observations.
 #' @param iter number of iterations.
-#' @param a minimum values
-#' @param b maximum value
+#' @param a minimum values.
+#' @param b maximum value.
 #'
 #' @importFrom graphics hist
 #' @importFrom stats runif
@@ -12,7 +12,7 @@
 #' @importFrom graphics lines
 #' @importFrom stats density
 #' @export
-mycltu <- function(n,iter,a=0,b=10){
+mycltu <- function(n=10,iter=1000,a=0,b=10){
   # Random uniform theorem
   y=runif(n*iter,a,b)
   # Makes a matrix of the data from y

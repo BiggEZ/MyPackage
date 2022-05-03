@@ -1,0 +1,124 @@
+---
+title: "myPackage Vignette"
+author: "Ezekiel House"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+abstract: This vignette explains myPackage's how its four functions work and gives example of how to run them.
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.width=8, 
+  fig.height=6
+)
+```
+
+```{r setup}
+library(myPackage)
+```
+
+---
+
+# myncurve
+
+## Description
+
+The `myncurve(mean, sd, a, color)` function takes in user-defined parameters for a **normal distribution**. Using these parameters, it draws the a bell curve about the `mean` with a standard deviation of `sd`. It also shades the lower tail area under the curve up to `x = a`. Then it returns the **probability** of `a`.
+
+## Usage
+
+```{r, include=TRUE}
+myncurve(mean = 5, sd = 1, a = 6, color="blue")
+```
+
+## Parameters
+
+`mean - Mean of normal distribution function.`
+
+`sd - Standard deviation from the mean.`
+
+`a - Value of P(Y <= a).`
+
+`color - color of the shaded region under curve.`
+
+---
+
+# myddt
+
+## Description
+
+The `myddt(df, cond)` reads in the DDT.csv file and plots the **LENGTH** vs **WEIGHT** of the fish species that the user specifies. 
+
+## Usage
+
+```{r, include=TRUE}
+myddt(df = ddt, SPECIES=="CCATFISH", list = FALSE)
+```
+
+## Parameters
+
+`df - Data frame to read from (can only be DDT.csv)`
+
+`cond - Species to filter (SPECIES=="")`
+
+`list - "TRUE" or "FALSE" to print the list of values`
+
+---
+
+# mycltu
+
+## Description 
+
+the `mycltu(n, iter, a, b)` function plots a **random uniform distribution** to show how the distribution changes with sample size. 
+## Usage
+
+```{r, include=TRUE}
+mycltu(n = 10, iter = 1000, a = 0, b = 10)
+```
+
+## Parameters
+
+`n - number of different observations`
+
+`iter - number of iterations`
+
+`a - minimum x value`
+
+`b - maximum x value`
+
+---
+
+# myboot2
+
+## Description
+
+The `myboot2()` function applies a **bootstrap method** to a data set for a specified function and returns a graphed confidence interval for the data. The data set `x` contains the values available for random sampling. `fun` is the function applied to these values. `alpha` is the alpha value of the confidence interval.
+
+## Usage
+
+```{r, include=TRUE}
+myboot2(iter = 10000, x=(0:10), fun = "mean", alpha= 0.05, cx = 1.5)
+```
+
+The above graph is the confidence interval for the mean of the values between 0 and 10, with 95% confidence.
+
+## Parameters
+
+`iter - Number of iterations that the function will make.`
+
+`x - The range of values to sample from`
+
+`fun - The function that will be applied to the data set.`
+
+`alpha - The alpha value for the confidence interval.`
+
+`cx - character expansion factor.`
+
+`... - Further graphical parameters.`
+
+

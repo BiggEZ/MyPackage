@@ -3,14 +3,25 @@
 \name{myddt}
 \alias{myddt}
 \title{myddt}
+\usage{
+myddt(df, cond, list = FALSE)
+}
 \arguments{
 \item{df}{data file}
 
 \item{cond}{Species to filter}
+
+\item{list}{"TRUE" or "FALSE" to print the list of values}
 }
 \value{
-Graphs
+Graph of selected species
 }
 \description{
-myddt
+Specifically made for the DDT.csv data set. Reads in data and
+plots Length vs Weight for the specified species of fish. Writes the data
+into a .csv file.
+}
+\examples{
+\dontrun{myddt(df = ddt, SPECIES=="CCATFISH", list = FALSE)}
+
 }

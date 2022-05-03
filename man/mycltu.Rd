@@ -4,16 +4,16 @@
 \alias{mycltu}
 \title{mycltu}
 \usage{
-mycltu(n, iter, a = 0, b = 10)
+mycltu(n = 10, iter = 1000, a = 0, b = 10)
 }
 \arguments{
 \item{n}{number of different observations.}
 
 \item{iter}{number of iterations.}
 
-\item{a}{minimum values}
+\item{a}{minimum values.}
 
-\item{b}{maximum value}
+\item{b}{maximum value.}
 }
 \description{
 Plots a random uniform distribution to show how the distribution changes with sample size.

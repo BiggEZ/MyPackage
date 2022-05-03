@@ -1,19 +1,25 @@
 #' @title myddt
 #' @name myddt
+#' @description Specifically made for the DDT.csv data set. Reads in data and
+#' plots Length vs Weight for the specified species of fish. Writes the data
+#' into a .csv file.
+#'
+#' @usage myddt(df, cond, list = FALSE)
 #'
 #' @param df data file
 #' @param cond Species to filter
+#' @param list "TRUE" or "FALSE" to print the list of values
 #'
-#' @return Graphs
+#' @import dplyr ggplot2
+#' @importFrom utils write.csv data
+#'
+#' @return Graph of selected species
+#' @examples
+#' \dontrun{myddt(df = ddt, SPECIES=="CCATFISH", list = FALSE)}
+#'
 #' @export
-#'
 
-globalVariables(c("%>%", "filter", "ggplot", "aes", "geom_point", "stat_smooth",
-                  "ggtitle", "theme", "element_text", "write.csv"))
-
-library(dplyr, lib.loc="C:/Users/ezeki/OneDrive/Documents/R/win-library/4.1/")
-library(ggplot2, lib.loc="C:/Users/ezeki/OneDrive/Documents/R/win-library/4.1/")
-myddt <- function(df, cond){
+myddt <- function(df=(myPackage::ddt), cond, list = FALSE){
   # %>% is an operator from dplyr.
   # You must use "{{}}" to tell filter to find cond
   df1 = df %>% filter({{cond}})
@@ -38,6 +44,8 @@ myddt <- function(df, cond){
 
   # Creates a named list of all three lists
   bigList<-list(Original=df, Filtererd=df1, Relative=freq)
-  print(bigList)
 
+  if(list == TRUE){
+    print(bigList)
+  }
 }
